@@ -126,7 +126,7 @@
 
 ---
 
-# Persona 5 – The Family Manager
+# Persona 5 – The Family Man
 
 **Name:** Amit
 
