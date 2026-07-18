@@ -75,6 +75,9 @@
 * Expects fast interactions
 * Comfortable with notifications
 
+### Motivation
+
+"I don't want to run out of pocket money before month-end."
 
 ---
 
@@ -132,12 +135,12 @@
 
 ### App Usage
 
-* Checks dashboard every evening.
+* Checks the dashboard every evening.
 * Reviews monthly reports before salary day.
 
 ---
 
-# Persona 5 – The Family Man
+# Persona 5 – Family Finance Manager
 
 **Name:** Amit
 
@@ -172,12 +175,11 @@
 
 Every Kharcha user usually has one or more of these problems:
 
-* Doesn't know where money goes.
-* Doesn't enjoy maintaining expense records.
-* Wants a quick and simple app.
-* Needs budget alerts.
-* Wants useful reports instead of confusing data.
-* Wants to build better financial habits.
+* Salary disappears unexpectedly.
+* Small expenses accumulate unnoticed.
+* Budgeting feels overwhelming.
+* Existing apps require too much effort.
+* Users stop tracking after a few days.
 
 ---
 
@@ -191,6 +193,7 @@ Every feature in Kharcha should follow these principles:
 4. The interface should be simple enough for first-time users.
 5. Every screen should help users understand or control their money.
 6. Users should never feel like they are doing accounting—they should feel like they are managing their life.
+7. Every interaction should reduce effort, not increase it.
 
 ---
 
@@ -206,3 +209,21 @@ A successful Kharcha user should be able to answer these questions instantly:
 * Where can I reduce unnecessary expenses?
 
 If Kharcha helps users answer these questions effortlessly, it has fulfilled its purpose.
+
+---
+
+# What We Will Optimize For
+
+Kharcha is optimized for users who:
+
+✔ Want quick expense tracking
+✔ Want better awareness of spending
+✔ Prefer simplicity over complexity
+✔ Use their phone daily
+✔ Value actionable insights
+
+Kharcha is NOT optimized for users who:
+
+✘ Need advanced accounting
+✘ Require investment portfolio management
+✘ Expect bank-level financial planning
