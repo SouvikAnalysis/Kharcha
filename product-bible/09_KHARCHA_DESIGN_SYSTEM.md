@@ -1,6 +1,6 @@
-# KHARCHA
+# KHARCHTA
 
-# 09_KHARCHA_DESIGN_SYSTEM.md
+# 09_DESIGN_SYSTEM.md
 
 ---
 
@@ -18,39 +18,41 @@
 
 # Purpose
 
-This document defines the visual language, interaction principles, and design standards for Kharcha.
+This document defines the complete visual identity, interaction principles, and user experience standards for Kharcha.
 
-The objective is to create a simple, trustworthy, and emotionally reassuring experience that helps users manage money with confidence.
+It ensures every screen, component, animation, and interaction feels like one consistent product.
 
-This document acts as the single source of truth for designers and developers.
+This document serves as the single source of truth for designers, developers, and future contributors.
 
 ---
 
 # Design Philosophy
 
-Money creates stress.
+Managing money should never feel stressful.
 
-The interface should reduce stress, not increase it.
+Kharcha is designed to make users feel:
 
-Every screen should feel:
+• Calm
 
-• Clean
+• Confident
 
-• Friendly
+• In Control
 
-• Fast
+• Encouraged
 
-• Trustworthy
+• Financially Aware
 
-• Intelligent
+We are not designing an expense tracker.
+
+We are designing a trusted financial companion.
 
 ---
 
 # Brand Personality
 
-Kharcha should feel like:
+Kharcha behaves like:
 
-A trusted financial coach.
+A knowledgeable friend who understands personal finance.
 
 Not a bank.
 
@@ -58,51 +60,59 @@ Not an accountant.
 
 Not a spreadsheet.
 
+Not a financial advisor.
+
+Kharcha educates, guides, and encourages.
+
+It never judges.
+
 ---
 
-# Design Principles
+# Core Design Principles
 
-## 1. Clarity Over Decoration
+## 1. Simplicity First
 
-Users should immediately understand what matters.
+Remove anything that doesn't help the user.
 
-Avoid unnecessary graphics and visual clutter.
+Every screen should have one clear purpose.
 
 ---
 
 ## 2. Every Rupee Matters
 
-Financial information should always be clear and accurate.
+Financial information always receives the highest visual priority.
 
-Amounts must always have the highest visual priority.
+Money should never be hidden behind unnecessary design.
 
 ---
 
 ## 3. Progressive Disclosure
 
-Show only what the user needs right now.
+Show users only what they need today.
 
-Advanced information appears only when requested.
+Advanced information appears naturally as users grow.
 
 ---
 
 ## 4. One Primary Action
 
-Each screen should have one obvious primary action.
+Each screen should guide users toward one important action.
 
-Example:
+Examples
 
 Home → Add Expense
 
-Insights → Understand Spending
+Insights → Learn
 
-Budget → Review Budget
+Budget → Review
+
+Money Story → Reflect
 
 ---
 
-## 5. Immediate Feedback
+## 5. Instant Feedback
 
-Every action should receive instant confirmation.
+Every action deserves immediate visual confirmation.
 
 Examples
 
@@ -110,61 +120,67 @@ Expense Added
 
 Budget Updated
 
-Money Story Ready
+Money Story Generated
+
+Financial Health Improved
 
 ---
 
-# Visual Identity
+# Brand Identity
 
-## Logo
+## Tagline
 
-Simple
-
-Minimal
-
-Memorable
-
-Indian-first
+Every Rupee Matters
 
 ---
 
-## Theme
+## Signature Color
 
-Light Theme
+### Kharcha Teal
 
-Primary experience.
+HEX
 
-Dark Theme
+#44B8A8
 
-Optional.
+Represents
+
+• Trust
+
+• Calm
+
+• Growth
+
+• Simplicity
+
+• Financial Confidence
+
+Used For
+
+• Primary Buttons
+
+• Active Navigation
+
+• Progress Indicators
+
+• Charts
+
+• Highlights
+
+• Interactive Elements
 
 ---
 
-## Color System
+## Supporting Colors
 
-### Primary
+### Success
 
-Finance Green
-
-Used for:
+Green
 
 Income
 
 Savings
 
-Positive trends
-
----
-
-### Secondary
-
-Blue
-
-Information
-
-Charts
-
-Navigation
+Achievements
 
 ---
 
@@ -172,7 +188,9 @@ Navigation
 
 Amber
 
-Budget nearing limit.
+Budget Near Limit
+
+Upcoming Bills
 
 ---
 
@@ -182,7 +200,7 @@ Red
 
 Overspending
 
-Critical alerts
+Critical Alerts
 
 ---
 
@@ -194,7 +212,11 @@ Gray
 
 Black
 
-For readability.
+Backgrounds
+
+Cards
+
+Text
 
 ---
 
@@ -234,15 +256,17 @@ Small
 
 12
 
+Typography should prioritize readability over decoration.
+
 ---
 
-# Spacing System
+# Layout System
 
-Base Unit
+Base Grid
 
 8px
 
-Examples
+Spacing
 
 8
 
@@ -256,11 +280,11 @@ Examples
 
 48
 
-Consistent spacing improves readability.
+Consistent spacing creates visual balance.
 
 ---
 
-# Border Radius
+# Corner Radius
 
 Cards
 
@@ -280,11 +304,11 @@ Bottom Sheets
 
 ---
 
-# Shadows
+# Elevation
 
-Minimal.
+Soft shadows only.
 
-Cards should appear elevated but not floating.
+Cards should feel layered, not floating.
 
 ---
 
@@ -294,11 +318,17 @@ Rounded Icons
 
 Simple
 
-Filled for active state
+Recognizable
 
-Outlined for inactive state
+Filled
 
-Icons should communicate meaning without text whenever possible.
+Active
+
+Outlined
+
+Inactive
+
+Icons should communicate meaning without requiring text.
 
 ---
 
@@ -308,35 +338,35 @@ Primary
 
 Filled
 
-Used for major actions.
+Kharcha Teal
 
 Secondary
 
 Outlined
 
-Used for alternative actions.
+Text
 
-Text Button
+Low Priority
 
-Used for low-priority actions.
+Every screen should contain only one primary button.
 
 ---
 
 # Input Fields
 
-Simple
-
 Large touch targets
 
 Clear labels
 
-Inline validation
+Simple validation
+
+Minimal typing
 
 Examples
 
 Salary
 
-Expense Amount
+Expense
 
 Budget
 
@@ -350,23 +380,25 @@ Cards are the primary information container.
 
 Examples
 
-Financial Health
-
 Today's Spending
+
+Remaining Budget
 
 Budget Progress
 
-Money Story Preview
+Financial Health
 
-AI Suggestion
+Money Story
+
+AI Coach
+
+Recent Expenses
 
 ---
 
 # Charts
 
 Charts should answer questions.
-
-Avoid decorative graphs.
 
 Preferred
 
@@ -378,6 +410,8 @@ Donut Chart
 
 Progress Ring
 
+Avoid decorative visualizations.
+
 ---
 
 # Empty States
@@ -386,15 +420,15 @@ Every empty screen should teach users what to do next.
 
 Example
 
-"No expenses yet."
+No expenses recorded.
 
 ↓
 
-"Add your first expense."
+Add your first expense.
 
 ↓
 
-Button
+Primary Button
 
 Add Expense
 
@@ -402,9 +436,9 @@ Add Expense
 
 # Loading States
 
-Skeleton loaders.
+Skeleton Loading
 
-Avoid endless spinners.
+Avoid long loading animations.
 
 ---
 
@@ -418,7 +452,7 @@ Example
 
 Unable to load expenses.
 
-Retry
+Try Again
 
 ---
 
@@ -432,25 +466,85 @@ Expense Added
 
 Budget Achieved
 
-First Money Story Ready
+Savings Goal Completed
 
-Savings Goal Reached
+Money Story Ready
+
+Financial Health Improved
+
+---
+
+# Signature Interaction
+
+Kharcha rewards users with subtle micro-interactions.
+
+## Expense Added Animation
+
+Animation Flow
+
+User taps Save
+
+↓
+
+Button compresses
+
+↓
+
+Gold coin appears
+
+↓
+
+Coin drops into wallet
+
+↓
+
+Wallet gently bounces
+
+↓
+
+Dashboard values animate
+
+↓
+
+Budget Progress updates
+
+↓
+
+Success Message
+
+Duration
+
+500–700 milliseconds
+
+Principles
+
+• Lightweight
+
+• Smooth
+
+• Non-blocking
+
+• Delightful
+
+• Optional for accessibility
+
+This becomes Kharcha's signature interaction.
 
 ---
 
 # Motion Design
 
-Animations should be subtle.
+Animations should:
 
-Purpose
+Guide
 
-Guide attention
+Confirm
 
-Confirm actions
-
-Improve flow
+Reward
 
 Never distract.
+
+Motion should always have a purpose.
 
 ---
 
@@ -460,77 +554,145 @@ Minimum touch target
 
 48px
 
-Readable contrast
+High contrast
 
-Support screen readers
+Screen reader support
 
-Avoid relying only on color
+Large text support
+
+Never rely only on color.
 
 ---
 
 # AI Design Guidelines
 
-AI should feel like a helpful coach.
+AI should always feel:
 
-Never sound robotic.
+Calm
 
-Avoid fear.
+Helpful
 
-Celebrate positive habits.
-
-Explain every recommendation.
-
-Example
-
-Instead of
-
-"You overspent."
-
-Say
-
-"You spent ₹1,200 more on food than usual. Cooking at home twice this week could help you stay within budget."
-
----
-
-# Financial Health Score
-
-Always explain why the score changed.
-
-Never show a number without context.
-
-Good
-
-85
-
-Excellent budgeting.
-
-Needs Improvement
-
-Shopping increased this month.
-
-Suggestion
-
-Reduce discretionary spending by ₹1,500.
-
----
-
-# Voice & Tone
-
-Friendly
+Practical
 
 Respectful
 
 Encouraging
 
+Never robotic.
+
 Never judgmental.
 
-Bad
+Never manipulative.
 
-"You wasted money."
+---
 
-Good
+## Good Example
 
-"You spent more than usual in this category."
+"You spent ₹1,200 more on food than usual.
+
+Cooking at home twice this week could help you stay within budget."
+
+---
+
+## Bad Example
+
+"You wasted too much money."
+
+---
+
+# Financial Health Score
+
+Every score must explain itself.
+
+Example
+
+Financial Health
+
+86 / 100
+
+Strengths
+
+Excellent budget discipline.
+
+Needs Improvement
+
+Shopping increased by 18%.
+
+Suggestion
+
+Reduce discretionary spending by ₹1,500 to reach a score above 90 next month.
+
+---
+
+# Money Story Design
+
+Money Story is Kharcha's signature experience.
+
+Users should look forward to reading it every month.
+
+Money Story should feel:
+
+Personal
+
+Visual
+
+Positive
+
+Actionable
+
+Reflective
+
+It should never look like a bank statement.
+
+---
+
+# Voice & Tone
+
+Kharcha speaks like a trusted coach.
+
+Friendly
+
+Respectful
+
+Simple
+
+Encouraging
+
+Never sarcastic.
+
+Never critical.
+
+Never overwhelming.
+
+---
+
+# Future Design Vision
+
+Version 2
+
+Financial Health Dashboard
+
+Money Story
+
+Recurring Bills
+
+Version 3
+
+AI Coach
+
+Smart Budget Planner
+
+Savings Planner
+
+Predictive Spending
+
+Version 4
+
+Voice Expense Entry
+
+Family Wallet
+
+Investment Overview
 
 ---
 
@@ -538,8 +700,26 @@ Good
 
 Every screen should answer:
 
-"What should I do next?"
+"What is the next best action for the user?"
 
-Every interaction should make users feel more confident about managing money.
+Every interaction should reduce friction.
 
-If a design element does not improve clarity or trust, it should be removed.
+Every animation should reinforce confidence.
+
+Every recommendation should be explainable.
+
+Every design decision should make users feel more in control of their money.
+
+---
+
+# CEO Vision
+
+People will not remember every screen.
+
+They will remember how Kharcha made them feel.
+
+Kharcha should leave users with one feeling after every session:
+
+"I understand my money a little better today."
+
+That feeling is our true product.
