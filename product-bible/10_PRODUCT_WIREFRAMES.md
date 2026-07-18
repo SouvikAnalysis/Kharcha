@@ -18,156 +18,373 @@
 
 # Purpose
 
-This document defines the structural layout of every major screen in Kharcha.
+This document defines the user experience blueprint for every major screen in Kharcha.
 
-Wireframes focus on:
+It focuses on:
 
+- User goals
+- Business goals
 - Information hierarchy
-- User actions
+- Primary interactions
 - Navigation
-- Content placement
+- AI opportunities
+- Future scalability
 
-Visual styling is defined separately in the Design System.
+This is **not** a visual design document.
+
+Visual styling is defined in **09_DESIGN_SYSTEM.md**.
 
 ---
 
-# Wireframing Principles
+# Wireframing Philosophy
 
-Every wireframe must answer:
+Kharcha is not an expense tracker.
 
-1. What does the user need first?
-2. What is the primary action?
-3. What information is most important?
-4. Can the user complete their task quickly?
+Kharcha is an AI-powered Personal Financial Companion.
+
+Every wireframe must help users answer one question:
+
+> "What should I do next to improve my financial life?"
+
+---
+
+# Experience Principles
+
+Every screen should:
+
+• Be understandable within 5 seconds
+
+• Have one primary action
+
+• Reduce cognitive load
+
+• Minimize typing
+
+• Encourage better financial habits
+
+• Feel calm and trustworthy
 
 ---
 
 # Screen Priority
 
-| Priority | Screen |
-|----------|--------|
-| P1 | Home Dashboard |
-| P1 | Add Expense |
-| P1 | Insights |
-| P1 | Budget |
-| P2 | Expense Details |
-| P2 | Search |
-| P2 | Profile |
-| P2 | Settings |
-| P3 | AI Money Story |
-| P3 | AI Coach |
+## Priority 1 (Daily Use)
+
+- Home Dashboard
+- Add Expense
+- Insights
+- Budget Intelligence
+
+---
+
+## Priority 2 (Weekly Use)
+
+- Search
+- Expense Details
+- Profile
+
+---
+
+## Priority 3 (Occasional)
+
+- Login
+- Settings
+- Forgot Password
+
+---
+
+## Priority 4 (AI Experience)
+
+- Money Story
+- Financial Health
+- AI Financial Coach
 
 ---
 
 # WF-01 — Splash Screen
 
-Purpose
+## Purpose
+
+Introduce the Kharcha brand.
+
+---
+
+## User Goal
+
+Launch the application.
+
+---
+
+## Business Goal
 
 Create a memorable first impression.
 
-Layout
+---
 
-```
-+------------------------+
-|                        |
-|        LOGO            |
-|                        |
-|     Every Rupee        |
-|       Matters          |
-|                        |
-+------------------------+
-```
+## Components
+
+- Logo
+- Tagline
+- Loading Animation
+
+---
+
+## Primary Action
+
+Automatically navigate to Welcome/Login.
+
+---
+
+## AI Opportunity
+
+None
 
 ---
 
 # WF-02 — Welcome Screen
 
-```
-+------------------------+
-|      Illustration      |
-|                        |
-| Welcome to Kharcha     |
-|                        |
-| Track smarter.         |
-| Spend wisely.          |
-|                        |
-|  Continue with Google  |
-|                        |
-|  Continue with Email   |
-+------------------------+
-```
+## Purpose
+
+Explain the value of Kharcha.
 
 ---
 
-# WF-03 — Home Dashboard (Most Important)
+## User Goal
 
-Purpose
-
-Users should understand their financial situation in under five seconds.
-
-```
-+--------------------------------+
-| 👋 Good Evening, Souvik        |
-|-------------------------------|
-| Financial Health     86/100    |
-|-------------------------------|
-| Salary        ₹37,500          |
-| Spent         ₹22,100          |
-| Remaining     ₹15,400          |
-|-------------------------------|
-| Today's Spending              |
-| ₹820                          |
-|-------------------------------|
-| Budget Progress               |
-| ███████░░░                    |
-|-------------------------------|
-| AI Daily Insight              |
-| "Food spending is lower..."   |
-|-------------------------------|
-| Recent Expenses               |
-| • Swiggy       ₹320           |
-| • Uber         ₹250           |
-| • Grocery      ₹480           |
-|-------------------------------|
-|        💰 Add Expense         |
-|-------------------------------|
-| Home Insights Profile         |
-+--------------------------------+
-```
+Understand what the app does.
 
 ---
 
-# WF-04 — Add Expense
+## Business Goal
 
-```
-+----------------------------+
-| Add Expense               |
-|---------------------------|
-| Amount                    |
-| ₹________                 |
-|---------------------------|
-| Category                  |
-| 🍔 Food                   |
-|---------------------------|
-| Date                      |
-| Today                     |
-|---------------------------|
-| Notes (Optional)          |
-|___________________________|
-|                           |
-|       Save Expense        |
-+----------------------------+
-```
+Increase onboarding completion.
 
-Signature Interaction
+---
 
-After tapping **Save Expense**:
+## Components
 
-💰 Coin animation
+- Welcome Illustration
+- Product Introduction
+- Continue with Google
+- Continue with Email
+
+---
+
+## Primary Action
+
+Create Account
+
+---
+
+## AI Opportunity
+
+None
+
+---
+
+# WF-03 — Login
+
+## Purpose
+
+Authenticate users.
+
+---
+
+## User Goal
+
+Access personal financial data.
+
+---
+
+## Components
+
+- Email
+- Password
+- Google Login
+- Forgot Password
+
+---
+
+## Primary Action
+
+Login
+
+---
+
+# WF-04 — Budget Setup
+
+## Purpose
+
+Collect the minimum financial information.
+
+---
+
+## User Goal
+
+Set a monthly budget.
+
+---
+
+## Components
+
+- Salary
+- Monthly Budget
+- Salary Date
+
+---
+
+## Primary Action
+
+Continue
+
+---
+
+## AI Opportunity
+
+Build initial financial profile.
+
+---
+
+# WF-05 — Category Setup
+
+## Purpose
+
+Allow users to personalize expense categories.
+
+---
+
+## Components
+
+- Default Categories
+- Custom Categories
+
+---
+
+## Primary Action
+
+Finish Setup
+
+---
+
+# WF-06 — Home Dashboard ⭐
+
+## Purpose
+
+Help users make today's financial decisions.
+
+---
+
+## User Goal
+
+Understand financial status within five seconds.
+
+---
+
+## Business Goal
+
+Increase Daily Active Users.
+
+---
+
+## Visit Frequency
+
+5–10 times per day.
+
+---
+
+## Information Hierarchy
+
+1. Greeting
+2. Financial Health
+3. Today's Snapshot
+4. Budget Intelligence
+5. AI Insight
+6. Recent Expenses
+7. Add Expense
+
+---
+
+## Components
+
+### Greeting
+
+Good Morning, Souvik 👋
+
+---
+
+### Financial Health Card
+
+Overall Score
+
+Strengths
+
+Weaknesses
+
+---
+
+### Today's Snapshot
+
+Salary
+
+Spent Today
+
+Remaining Budget
+
+---
+
+### Budget Intelligence
+
+Instead of a progress bar, show intelligent budget guidance.
+
+Example
+
+- Budget Left
+- Time Progress
+- Budget Progress
+- Safe Daily Spend
+- AI Recommendation
+
+---
+
+### AI Daily Insight
+
+Examples
+
+"You're spending slower than the month is progressing."
+
+"Cooking twice this week could save ₹900."
+
+---
+
+### Recent Expenses
+
+Last five expenses.
+
+---
+
+### Floating Action Button
+
+💰 Add Expense
+
+---
+
+## Signature Interaction
+
+After saving an expense:
+
+Button Press
 
 ↓
 
-Wallet animation
+Coin flips
+
+↓
+
+Coin drops into wallet
+
+↓
+
+Wallet bounces
 
 ↓
 
@@ -175,107 +392,351 @@ Dashboard updates
 
 ↓
 
+Budget Intelligence refreshes
+
+↓
+
+AI Insight refreshes
+
+↓
+
 Expense Added
 
 ---
 
-# WF-05 — Insights
+## Primary Navigation
 
-```
-+------------------------------+
-| Monthly Spending            |
-|-----------------------------|
-| Donut Chart                 |
-|                             |
-| Food       35%              |
-| Travel     18%              |
-| Shopping   14%              |
-|-----------------------------|
-| Weekly Trend                |
-| Line Chart                  |
-|-----------------------------|
-| AI Summary                  |
-|-----------------------------|
-| Money Story                 |
-+------------------------------+
-```
+Insights
+
+Profile
+
+Search
+
+Add Expense
 
 ---
 
-# WF-06 — Budget
+## Empty State
 
-```
-+---------------------------+
-| Monthly Budget           |
-|--------------------------|
-| ₹40,000                 |
-|--------------------------|
-| Used                    |
-| ₹26,000                 |
-|--------------------------|
-| Remaining               |
-| ₹14,000                 |
-|--------------------------|
-| Progress Ring           |
-|--------------------------|
-| Category Budgets        |
-+--------------------------+
-```
+No expenses yet.
+
+↓
+
+Add your first expense.
 
 ---
 
-# WF-07 — Money Story (Signature Screen)
+## Success Criteria
 
-Purpose
-
-This should become Kharcha's most memorable experience.
-
-```
-+----------------------------------+
-| 📖 July Money Story             |
-|---------------------------------|
-| Salary       ₹37,500            |
-| Expenses     ₹30,200            |
-| Savings      ₹7,300             |
-|---------------------------------|
-| Biggest Win                    |
-| Food spending down 18%          |
-|---------------------------------|
-| Biggest Risk                   |
-| Shopping up 24%                 |
-|---------------------------------|
-| AI Recommendation               |
-| Save ₹1,500 next month by...    |
-|---------------------------------|
-| Financial Health               |
-| 86 / 100                       |
-+----------------------------------+
-```
+Users understand their financial situation in less than five seconds.
 
 ---
 
-# WF-08 — AI Financial Coach
+## AI Opportunity
 
-```
-+--------------------------------+
-| 🤖 Kharcha AI                 |
-|-------------------------------|
-| Good evening 👋              |
-|-------------------------------|
-| Today's Advice               |
-|-------------------------------|
-| Budget Alert                 |
-|-------------------------------|
-| Suggested Action             |
-|-------------------------------|
-| Ask Kharcha AI               |
-|______________________________|
-+--------------------------------+
-```
+Daily Financial Brief
 
 ---
 
-# Navigation Flow
+# WF-07 — Add Expense
+
+## Purpose
+
+Record expenses in under five seconds.
+
+---
+
+## Components
+
+Amount
+
+Category
+
+Date
+
+Notes
+
+Save Button
+
+---
+
+## Primary KPI
+
+Average Entry Time
+
+Target
+
+Less than five seconds.
+
+---
+
+## Signature Interaction
+
+Coin Animation
+
+---
+
+# WF-08 — Expense Details
+
+## Purpose
+
+Review or edit expenses.
+
+---
+
+## Components
+
+Expense Information
+
+Edit
+
+Delete
+
+---
+
+## Primary Action
+
+Update Expense
+
+---
+
+# WF-09 — Insights
+
+## Purpose
+
+Transform financial data into understanding.
+
+---
+
+## Components
+
+Monthly Spending
+
+Category Breakdown
+
+Weekly Trend
+
+AI Summary
+
+Money Story Shortcut
+
+---
+
+## User Goal
+
+Understand spending behaviour.
+
+---
+
+## AI Opportunity
+
+Predict future spending.
+
+---
+
+# WF-10 — Budget Intelligence
+
+## Purpose
+
+Help users stay within budget.
+
+---
+
+## Components
+
+Budget Left
+
+Time Progress
+
+Budget Progress
+
+Daily Safe Spending
+
+AI Recommendation
+
+Upcoming Risk
+
+---
+
+## User Goal
+
+Know whether current spending is sustainable.
+
+---
+
+## AI Opportunity
+
+Predict month-end budget.
+
+---
+
+# WF-11 — Search
+
+## Purpose
+
+Find expenses instantly.
+
+---
+
+## Components
+
+Search
+
+Filters
+
+Results
+
+---
+
+# WF-12 — Profile
+
+## Purpose
+
+Display personal financial profile.
+
+---
+
+## Components
+
+Name
+
+Salary
+
+Financial Goals
+
+Settings Shortcut
+
+---
+
+## AI Opportunity
+
+Financial DNA
+
+---
+
+# WF-13 — Settings
+
+## Purpose
+
+Configure application preferences.
+
+---
+
+## Components
+
+Theme
+
+Notifications
+
+Privacy
+
+Logout
+
+---
+
+# WF-14 — Money Story ⭐
+
+## Purpose
+
+Deliver a personalized monthly financial story.
+
+---
+
+## User Goal
+
+Reflect on the month's financial journey.
+
+---
+
+## Components
+
+Income
+
+Expenses
+
+Savings
+
+Biggest Win
+
+Biggest Challenge
+
+Achievements
+
+AI Recommendations
+
+Financial Health
+
+---
+
+## Business Goal
+
+Create a memorable monthly experience.
+
+---
+
+## AI Opportunity
+
+Generate dynamic narratives.
+
+---
+
+# WF-15 — Financial Health
+
+## Purpose
+
+Measure overall financial wellbeing.
+
+---
+
+## Components
+
+Overall Score
+
+Savings
+
+Budget Discipline
+
+Spending Behaviour
+
+Monthly Trend
+
+---
+
+## User Goal
+
+Understand overall financial health.
+
+---
+
+# WF-16 — AI Financial Coach
+
+## Purpose
+
+Provide personalized financial guidance.
+
+---
+
+## Components
+
+Today's Advice
+
+Smart Alerts
+
+Budget Suggestions
+
+Savings Opportunities
+
+Ask Kharcha AI
+
+---
+
+## User Goal
+
+Receive practical financial coaching.
+
+---
+
+## Navigation Story
 
 Splash
 
@@ -289,51 +750,93 @@ Login
 
 ↓
 
-Home
+Budget Setup
 
-├── Add Expense
+↓
 
-├── Insights
+Category Setup
 
-├── Budget
+↓
 
-├── Profile
+Home Dashboard
 
-└── Search
+↓
+
+Add Expense
+
+↓
+
+Dashboard Refresh
+
+↓
+
+Insights
+
+↓
+
+Money Story
+
+↓
+
+Financial Health
+
+↓
+
+AI Coach
 
 ---
 
-# Wireframe Principles
+# Signature Moments
 
-Every screen should:
+## First Expense
 
-- Have one primary action.
-- Minimize typing.
-- Prioritize financial clarity.
-- Use consistent layouts.
-- Follow the Design System.
+💰 Coin Animation
+
+↓
+
+Dashboard Updates
+
+↓
+
+AI Insight Refresh
 
 ---
 
-# Future Wireframes
+## First Money Story
 
-Version 2
+📖
 
-- Financial Health
-- Recurring Bills
-- Money Story
+"Your first Money Story is ready."
 
-Version 3
+---
 
-- AI Coach
-- Smart Budget Planner
-- Savings Planner
-- Predictive Spending
+## Financial Health Improvement
+
+🎉
+
+"Your Financial Health increased from 81 to 85."
+
+---
+
+# Mobile UX Rules
+
+- One primary action per screen.
+- Maximum three taps to any important feature.
+- Minimum typing.
+- Large touch targets (48px).
+- AI explains, never overwhelms.
+- Every animation has a purpose.
 
 ---
 
 # CEO Vision
 
-Every wireframe should answer one question:
+We are not designing screens.
 
-"What is the fastest way to help users make a better financial decision?"
+We are designing financial experiences.
+
+Every screen should answer one question:
+
+> "How does this help the user make a better financial decision today?"
+
+If a screen cannot answer that question, it should not exist.
