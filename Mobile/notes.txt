@@ -1,0 +1,32 @@
+CMD promt-- 
+1. winget upgrade
+   winget upgrade --all
+2. DISM /Online /Cleanup-image /restorehealth 
+3. windos+R-- mrt-- full scan
+4. windos+R-- sigverif--start
+5. 
+
+
+https://www.linkedin.com/in/souvik-ghosh-/
+https://github.com/SouvikAnalysis
+
+09, 9th Main Road, Nagavara, Vyalikaval HBCS Layout, Bengaluru, Karnataka, 560045
+Indas Hospital More, Indas, Bankura, West Bengal, 722205
+
+Name - Kunal Natta 
+Employee ID - 5003078                                                                          
+Email ID - unal.natta@concentrix.com 
+
+9902194212
+
+22041998CGXPG2133B
+
+ 
+Hi, I’m reaching out because I’m exploring new opportunities.
+I’m a Data Analyst with 2.6 years of experience and looking for a new challenge.
+If you have time, let’s discuss whether I am a fit for any positions you’re filling.
+
+
+Microsoft Power BI(2), Data Visualization(2), SQL(2), Python(2), Data analysis(2), SQL Database(2), Data Cleanup(2), DAX(2), ETL(2), Data Modeling(2), JIRA(1)
+
+
