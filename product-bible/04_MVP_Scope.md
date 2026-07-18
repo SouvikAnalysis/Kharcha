@@ -8,7 +8,7 @@
 
 | Version | 1.0 |
 |----------|-----|
-| Status | Draft |
+| Status | Approved |
 | Owner | Souvik Ghosh |
 
 ---
