@@ -4,6 +4,16 @@
 
 ---
 
+# Document Information
+
+| Version | 1.0 |
+|----------|-----|
+| Product | Kharcha |
+| Tagline | Every Rupee Matters |
+| Status | Approved |
+
+---
+
 # Persona 1 – The Salaried Professional (Primary Persona)
 
 **Name:** Souvik
