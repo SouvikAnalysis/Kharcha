@@ -20,648 +20,525 @@
 
 This document defines the backend architecture of Kharcha.
 
-It explains how the mobile application, backend services, database, AI engine, authentication, notifications, and analytics work together.
+It describes how the backend is organized, how services interact, how data flows through the system, and the architectural decisions that support a scalable, secure, and maintainable application.
 
-The architecture should be:
+This document focuses on architecture rather than implementation details.
 
-- Scalable
-- Secure
-- Modular
-- Cloud-native
-- API-first
-- AI-ready
+API specifications are documented separately in **16_API_SPECIFICATION.md**.
 
 ---
 
-# Architecture Principles
+# Architecture Goals
 
-Every architectural decision should support:
+The backend should be:
 
-✓ Security
+- Scalable
+- Secure
+- Reliable
+- Fast
+- Modular
+- Easy to maintain
+- AI-ready
 
-✓ Reliability
+Every architectural decision should support long-term product growth.
 
-✓ Scalability
+---
 
-✓ Performance
+# System Overview
 
-✓ Simplicity
+Kharcha follows a client-server architecture.
 
-✓ Maintainability
+The Flutter application communicates with the backend through secure REST APIs.
+
+The backend processes business logic, stores financial data, generates AI insights, and sends notifications back to users.
 
 ---
 
 # High-Level Architecture
 
-```
-
-```
-                    +----------------------+
-                    |   Flutter Mobile App |
-                    +----------+-----------+
-                               |
-                               |
-                         HTTPS / REST
-                               |
-                               |
-                 +-------------+--------------+
-                 |         API Gateway         |
-                 +------+------+------+--------+
-                        |      |      |
-                        |      |      |
-         +--------------+      |      +---------------+
-         |                     |                      |
-         |                     |                      |
-+--------+--------+   +--------+--------+   +---------+--------+
-| Authentication  |   | Expense Service |   | Budget Service   |
-+--------+--------+   +--------+--------+   +---------+--------+
-         |                     |                      |
-         |                     |                      |
-         +---------------------+----------------------+
-                               |
-                               |
-                      +--------+--------+
-                      | PostgreSQL DB   |
-                      +--------+--------+
-                               |
-                +--------------+--------------+
-                |                             |
-        +-------+-------+             +-------+-------+
-        | AI Service    |             | Notification  |
-        +-------+-------+             +-------+-------+
-                |                             |
-        +-------+-------+             +-------+-------+
-        | Analytics     |             | Firebase FCM  |
-        +---------------+             +---------------+
-
+```text
+Flutter Mobile App
+        │
+ HTTPS REST API
+        │
+ API Layer
+        │
+ Business Services
+        │
+ Database + AI + Notifications
 ```
 
 ---
 
 # Technology Stack
 
-## Mobile
-
-Flutter
-
----
-
-## Backend
-
-FastAPI (Python)
-
----
-
-## Database
-
-PostgreSQL
+| Layer | Technology | Purpose |
+|--------|------------|---------|
+| Mobile | Flutter | Cross-platform application |
+| Backend | FastAPI | REST API development |
+| Database | PostgreSQL | Store application data |
+| Cache | Redis | Improve performance |
+| Authentication | Firebase Authentication | Secure user login |
+| Notifications | Firebase Cloud Messaging | Push notifications |
+| AI | LLM + Prompt Engine | Personalized financial insights |
+| Storage | Cloud Storage | Future receipt uploads |
+| Analytics | Firebase Analytics | User behavior tracking |
 
 ---
 
-## Cache
+# Core Backend Services
 
-Redis
+The backend is divided into independent services.
 
----
-
-## Authentication
-
-Firebase Authentication
-
----
-
-## Storage
-
-Cloud Storage
-
----
-
-## Notifications
-
-Firebase Cloud Messaging (FCM)
+| Service | Responsibility |
+|----------|---------------|
+| Authentication Service | Login, Signup, Token Validation |
+| User Service | Profile and Preferences |
+| Expense Service | Expense Management |
+| Category Service | Category Management |
+| Budget Service | Budget Tracking |
+| Insight Service | Reports and Analytics |
+| Financial Health Service | Health Score Calculation |
+| AI Service | Money Story and Recommendations |
+| Notification Service | Push Notifications |
+| Analytics Service | Event Tracking |
 
 ---
 
-## AI Layer
-
-LLM API
-
-Prompt Engine
-
-Recommendation Engine
-
----
-
-## Analytics
-
-Firebase Analytics
-
-Crashlytics
-
-Custom Events
-
----
-
-# Backend Services
-
----
+# Service Responsibilities
 
 ## Authentication Service
 
+Purpose
+
+Manage user identity and authentication.
+
 Responsibilities
 
+- User registration
 - Login
-- Signup
-- JWT Validation
-- Password Reset
-- Session Management
-
-Endpoints
-
-/login
-
-/signup
-
-/logout
-
-/refresh-token
+- Password reset
+- Token validation
+- Session management
 
 ---
 
 ## User Service
 
+Purpose
+
+Manage user information.
+
 Responsibilities
 
-- Profile
+- Personal profile
 - Salary
+- Financial goals
 - Preferences
-- Financial Goals
+- Notification settings
 
 ---
 
 ## Expense Service
 
-Responsibilities
+Purpose
 
-- Add Expense
-- Update Expense
-- Delete Expense
-- Search Expense
-- Expense History
-
----
-
-## Budget Service
+Manage all expense-related operations.
 
 Responsibilities
 
-- Monthly Budget
-- Budget Status
-- Safe Daily Spend
-- Budget Intelligence
+- Add expense
+- Update expense
+- Delete expense
+- Search expenses
+- Expense history
+
+Whenever an expense changes, this service notifies the Budget Service and AI Service.
 
 ---
 
 ## Category Service
 
+Purpose
+
+Manage expense categories.
+
 Responsibilities
 
-- Default Categories
-- Custom Categories
+- Default categories
+- Custom categories
+- Category validation
+
+---
+
+## Budget Service
+
+Purpose
+
+Monitor monthly budgets.
+
+Responsibilities
+
+- Budget creation
+- Budget updates
+- Remaining budget calculation
+- Safe daily spending
+- Budget intelligence
 
 ---
 
 ## Insight Service
 
+Purpose
+
+Transform financial data into meaningful information.
+
 Responsibilities
 
-- Charts
-- Reports
-- Monthly Statistics
+- Spending trends
+- Monthly reports
+- Category analysis
+- Weekly summaries
 
 ---
 
 ## Financial Health Service
 
-Responsibilities
+Purpose
 
-- Calculate Score
-- Trend Analysis
-- Recommendations
+Calculate the user's Financial Health Score.
+
+Factors
+
+- Budget discipline
+- Savings habit
+- Spending consistency
+- Goal achievement
 
 ---
 
 ## AI Service
 
+Purpose
+
+Provide intelligent financial guidance.
+
 Responsibilities
 
-Daily Insights
-
-Money Story
-
-Budget Recommendations
-
-Financial Coach
-
-Pattern Detection
-
-Prediction
+- Daily Insights
+- Money Story
+- Spending analysis
+- Smart recommendations
+- Financial Coach
 
 ---
 
 ## Notification Service
 
-Responsibilities
+Purpose
 
-Budget Alerts
+Keep users informed.
 
-Money Story Ready
+Examples
 
-Reminder Notifications
-
-Achievement Notifications
+- Budget alerts
+- Reminder notifications
+- Money Story ready
+- Achievement notifications
 
 ---
 
 ## Analytics Service
 
-Responsibilities
+Purpose
 
-Track
+Collect anonymous product usage data.
 
-Product Events
+Used for
 
-AI Usage
-
-Performance
-
-Retention
-
-Funnels
+- Product improvement
+- Feature adoption
+- AI evaluation
+- Crash analysis
 
 ---
 
-# Database Layer
+# Database Architecture
 
-Core Tables
+The backend stores structured financial data inside PostgreSQL.
 
-Users
+Primary entities include:
 
-Expenses
+- Users
+- Expenses
+- Categories
+- Budgets
+- Financial Goals
+- Notifications
+- Financial Health
+- Money Stories
 
-Budgets
+Detailed schema is documented in:
 
-Categories
-
-Goals
-
-Notifications
-
-Financial Health
-
-Money Stories
-
-Analytics Events
+17_DATABASE_SCHEMA.md
 
 ---
 
 # Data Flow
 
-Expense Added
+Whenever a user records an expense:
+
+Step 1
+
+Flutter sends the request.
 
 ↓
 
-API Request
+Step 2
+
+Expense Service validates the request.
 
 ↓
 
-Expense Service
+Step 3
+
+Expense is saved.
 
 ↓
 
-Database
+Step 4
+
+Budget Service recalculates remaining budget.
 
 ↓
 
-Budget Service Updates
+Step 5
+
+Financial Health Score updates.
 
 ↓
 
-Financial Health Updates
+Step 6
+
+AI generates new insights if necessary.
 
 ↓
 
-Analytics Event
+Step 7
 
-↓
-
-Dashboard Refresh
-
-↓
-
-AI Recommendation Refresh
+Dashboard returns updated information.
 
 ---
 
-# AI Processing Flow
+# AI Integration
 
-Expense Added
+The AI system does not directly modify user data.
 
-↓
+Instead, it reads financial information and generates recommendations.
 
-Store Expense
+AI Inputs
 
-↓
+- Expenses
+- Budget
+- Salary
+- Financial Goals
+- Spending History
 
-Update Budget
+AI Outputs
 
-↓
-
-Recalculate Financial Health
-
-↓
-
-Pattern Detection
-
-↓
-
-Generate Insight
-
-↓
-
-Return Updated Dashboard
+- Daily Insight
+- Budget Intelligence
+- Money Story
+- Financial Coach Responses
 
 ---
 
-# Notification Flow
+# Notification Architecture
 
-Budget reaches 80%
+Notifications are triggered by backend events.
 
-↓
+Examples
 
-Budget Service
+| Event | Notification |
+|--------|--------------|
+| Budget reaches 80% | Budget Warning |
+| Monthly Story Ready | Money Story Available |
+| No expenses for 3 days | Friendly Reminder |
+| Financial Health improves | Achievement |
 
-↓
-
-Notification Service
-
-↓
-
-FCM
-
-↓
-
-User Receives Alert
+Notifications are delivered using Firebase Cloud Messaging.
 
 ---
 
 # Security Architecture
 
-Authentication
+Security is a core design principle.
 
-JWT
+Measures include:
 
-Authorization
+- HTTPS communication
+- JWT authentication
+- Role-based authorization
+- Input validation
+- SQL injection protection
+- XSS protection
+- Rate limiting
+- Secure password storage
+- Encrypted database connections
 
-Role Based Access
-
-HTTPS Only
-
-Encrypted Database Connection
-
-Rate Limiting
-
-API Validation
-
-Secure Headers
-
-Input Sanitization
+Sensitive financial data is never exposed through analytics.
 
 ---
 
-# Caching Strategy
+# Performance Strategy
 
-Redis Stores
+Target response times:
 
-Frequently Used Dashboard
+| Operation | Target |
+|-----------|--------|
+| Dashboard | <300 ms |
+| Expense Save | <200 ms |
+| Budget Calculation | <150 ms |
+| Search | <500 ms |
+| AI Insight | <3 seconds |
 
-Categories
+Caching is used for frequently accessed data such as:
 
-Budget Summary
-
-Financial Health
-
-Session Data
-
----
-
-# Performance Targets
-
-Dashboard API
-
-<300ms
-
-Expense Save
-
-<200ms
-
-Budget Calculation
-
-<150ms
-
-Search
-
-<500ms
-
-AI Recommendation
-
-<3 seconds
+- Dashboard
+- Categories
+- Financial Health
+- Budget Summary
 
 ---
 
-# Logging
+# Deployment Overview
 
-Application Logs
+Production environment includes:
 
-API Logs
+- Flutter Mobile Application
+- Backend API
+- PostgreSQL Database
+- Redis Cache
+- Firebase Services
+- AI Provider
+- Monitoring Platform
 
-Error Logs
-
-Audit Logs
-
-AI Logs
-
-Performance Logs
-
----
-
-# Error Handling
-
-Standard Response
-
-{
-  "success": false,
-  "message": "Budget not found",
-  "errorCode": "BUDGET_404"
-}
-
----
-
-# Scalability Strategy
-
-Stateless APIs
-
-Horizontal Scaling
-
-Database Indexing
-
-Redis Cache
-
-Background Workers
-
-Async Processing
-
-CDN for Assets
-
----
-
-# Deployment Architecture
-
-Flutter App
-
-↓
-
-Cloud Load Balancer
-
-↓
-
-FastAPI Containers
-
-↓
-
-PostgreSQL
-
-↓
-
-Redis
-
-↓
-
-Firebase
-
-↓
-
-Monitoring
+Development, Staging, and Production remain completely isolated.
 
 ---
 
 # Monitoring
 
-API Health
+The backend continuously monitors:
 
-Database Health
+- API health
+- Server performance
+- Database performance
+- AI response time
+- Crash reports
+- Error rates
+- Notification delivery
 
-Server CPU
-
-Memory Usage
-
-Crash Reports
-
-AI Latency
-
-Notification Delivery
+Monitoring ensures issues are detected before they affect users.
 
 ---
 
 # Backup Strategy
 
-Daily Database Backup
+Daily backups
 
-Weekly Full Backup
+Weekly full backups
 
-Point-in-Time Recovery
+Point-in-time recovery
 
-Encrypted Storage
+Encrypted backup storage
 
----
-
-# Disaster Recovery
-
-Database Restore
-
-Server Failover
-
-Health Checks
-
-Automatic Restart
-
-Backup Verification
+Regular recovery testing
 
 ---
 
 # Development Environment
 
-Local
+Separate environments are maintained for:
 
-Docker
+- Local Development
+- Testing
+- Staging
+- Production
 
-Development
-
-Staging
-
-Production
-
-Separate Databases
-
-Separate Environment Variables
+Each environment uses independent configuration files and databases.
 
 ---
 
-# Folder Structure
+# Backend Folder Structure
 
 backend/
 
-app/
+├── src/
 
-api/
+│   ├── auth/
 
-services/
+│   ├── users/
 
-models/
+│   ├── expenses/
 
-schemas/
+│   ├── budgets/
 
-repositories/
+│   ├── categories/
 
-middleware/
+│   ├── insights/
 
-utils/
+│   ├── financial_health/
 
-config/
+│   ├── ai/
 
-tests/
+│   ├── notifications/
 
-main.py
+│   ├── analytics/
+
+│   └── shared/
+
+├── migrations/
+
+├── tests/
+
+├── docs/
+
+├── scripts/
+
+├── docker/
+
+├── requirements.txt
+
+└── main.py
 
 ---
 
-# Future Expansion
+# Future Scalability
 
-Web Application
+The architecture supports future modules including:
 
-Admin Dashboard
+- Receipt OCR
+- Voice Expense Entry
+- Family Accounts
+- Multi-Currency
+- Investment Tracking
+- Subscription Detection
+- Offline Synchronization
+- Web Dashboard
 
-Family Accounts
+These features can be added without major architectural changes.
 
-Multi-Currency
+---
 
-Offline Sync
+# Related Documents
 
-Receipt OCR
-
-Voice Expense Entry
-
-Investment Module
+- 08_DATA_ARCHITECTURE.md
+- 13_AI_SYSTEM.md
+- 14_ANALYTICS_EVENTS.md
+- 16_API_SPECIFICATION.md
+- 17_DATABASE_SCHEMA.md
+- 18_SECURITY_AND_PRIVACY.md
 
 ---
 
@@ -669,20 +546,12 @@ Investment Module
 
 The backend should be invisible to users.
 
-Users never praise a backend directly.
+Users should experience:
 
-They praise:
+- Fast performance
+- Reliable synchronization
+- Accurate financial insights
+- Secure data handling
+- Consistent application behavior
 
-• Fast loading
-
-• Reliable syncing
-
-• Accurate insights
-
-• Secure data
-
-• Instant updates
-
-If users never think about the backend,
-
-then the backend is doing its job.
+A successful backend is one that users never notice—but always trust.
